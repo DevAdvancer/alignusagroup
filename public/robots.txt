@@ -1,0 +1,38 @@
+# Align USA Group - robots.txt
+# https://alignusagroup.com
+
+User-agent: *
+Allow: /
+
+# Block crawling of thank-you pages and internal routes
+Disallow: /careers/thanks
+Disallow: /contact/thanks
+
+# Allow all major search engines
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+User-agent: YandexBot
+Allow: /
+
+# Sitemap locations
+Sitemap: https://alignusagroup.com/sitemap.xml
+Sitemap: https://alignusagroup.com/sitemap-articles.xml
+
+# Crawl-delay for polite crawling
+Crawl-delay: 1
+
+# Host directive
+Host: https://alignusagroup.com

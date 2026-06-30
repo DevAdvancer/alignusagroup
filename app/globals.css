@@ -108,7 +108,7 @@ a:hover{color:var(--ps-link-hover)}
 .nav-logo{display:flex;align-items:center;gap:10px;font-weight:600;font-size:15px;letter-spacing:.2px;color:#fff}
 .nav-logo img{height:32px;width:auto;display:block}
 .nav-links{display:flex;align-items:center;gap:28px;flex:1}
-.nav-link{color:#fff;font-size:14px;font-weight:500;position:relative;padding:6px 0;cursor:pointer;background:none;border:0;font-family:inherit}
+.nav-link{color:#fff;font-size:14px;font-weight:500;position:relative;padding:6px 0;cursor:pointer;background:none;border:0;font-family:inherit;white-space:nowrap}
 .nav-link:hover{color:var(--ps-link-hover)}
 .nav-link.active::after{content:"";position:absolute;left:0;right:0;bottom:-22px;height:2px;background:var(--ps-blue)}
 .nav-cta{margin-left:auto;display:flex;gap:10px;align-items:center}
@@ -676,9 +676,15 @@ html{color-scheme:var(--color-scheme)}
   border: 0;
 }
 
-/* Open Graph and social sharing hint */
-.opengraph-ready {
-  /* Ensure images used for OG have proper dimensions */
+/* Blog row styles */
+.blog-row {
+  transition: background 200ms ease;
+}
+.blog-row:hover {
+  background: rgba(0, 112, 204, 0.03);
+}
+.blog-row:hover [aria-label="Read article"] {
+  transform: translateX(4px);
 }
 
 

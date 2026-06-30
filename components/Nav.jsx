@@ -7,13 +7,13 @@ import ThemeToggle from './ThemeToggle';
 
 const links = [
   ['/', 'Home'],
-  ['/about', 'About Align USA'],
-  ['/services', 'Align USA Services'],
+  ['/about', 'About'],
+  ['/services', 'Services'],
   ['/industries', 'Industries'],
   ['/case-studies', 'Case Studies'],
-  ['/careers', 'Align USA Careers'],
+  ['/careers', 'Careers'],
   ['/blog', 'Insights'],
-  ['/contact', 'Contact Align USA'],
+  ['/contact', 'Contact'],
 ];
 
 export default function Nav() {
@@ -34,7 +34,7 @@ export default function Nav() {
             style={{ height: 32, width: 'auto', display: 'block' }}
           />
         </Link>
-        <div className="nav-links" role="menubar">
+        <div className="nav-links" role="menubar" style={{ whiteSpace: 'nowrap' }}>
           {links.map(([href, label]) => (
             <Link
               key={href}

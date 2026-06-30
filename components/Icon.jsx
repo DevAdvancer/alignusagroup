@@ -135,6 +135,12 @@ export default function Icon({ name, size = 22 }) {
           <path d="M5.5 5.5 9 9M15 15l3.5 3.5M5.5 18.5 9 15M15 9l3.5-3.5" />
         </svg>
       );
+    case 'arrow-right':
+      return (
+        <svg {...props}>
+          <path d="M5 12h14M13 6l6 6-6 6" />
+        </svg>
+      );
     default:
       return null;
   }

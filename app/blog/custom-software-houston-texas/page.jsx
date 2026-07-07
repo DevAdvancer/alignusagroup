@@ -1,6 +1,10 @@
 import Link from 'next/link';
 import PageHero from '../../../components/PageHero';
 
+const SITE_URL = 'https://alignusagroup.com';
+const lastUpdated = 'March 1, 2026';
+const publishDate = '2026-03-01';
+
 export const dynamic = 'force-static';
 
 export const metadata = {
@@ -15,13 +19,98 @@ export const metadata = {
     'when to build vs buy software',
     'Houston custom software',
   ],
+  alternates: {
+    canonical: `${SITE_URL}/blog/custom-software-houston-texas`,
+  },
   openGraph: {
     title: 'Why Houston Companies Are Turning to Custom Software Development',
     description: 'Houston companies are increasingly choosing custom software development over off-the-shelf solutions — here is why the calculus is shifting in 2026.',
+    url: `${SITE_URL}/blog/custom-software-houston-texas`,
+    type: 'article',
+    article: {
+      publishedTime: '2026-03-01',
+      modifiedTime: '2026-03-01',
+      authors: ['Align USA Group'],
+      section: 'Software Development',
+    },
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Why Houston Companies Are Turning to Custom Software Development',
+    description: 'Houston companies are increasingly choosing custom software development over off-the-shelf solutions.',
   },
 };
 
-const lastUpdated = 'March 1, 2026';
+// Structured Data
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: SITE_URL },
+    { '@type': 'ListItem', position: 2, name: 'Insights', item: `${SITE_URL}/blog` },
+    { '@type': 'ListItem', position: 3, name: 'Why Houston Companies Are Turning to Custom Software', item: `${SITE_URL}/blog/custom-software-houston-texas` },
+  ],
+};
+
+const articleSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: 'Why Houston Companies Are Turning to Custom Software Development',
+  description: 'Why Houston companies are choosing custom software development in 2026 — when off-the-shelf works, when custom wins, and how to evaluate the right approach for your business.',
+  image: `${SITE_URL}/og-image.png`,
+  datePublished: publishDate,
+  dateModified: lastUpdated,
+  author: {
+    '@type': 'Organization',
+    name: 'Align USA Group',
+    url: SITE_URL,
+  },
+  publisher: {
+    '@type': 'Organization',
+    name: 'Align USA Group',
+    logo: {
+      '@type': 'ImageObject',
+      url: `${SITE_URL}/logo/icon.png`,
+    },
+  },
+  mainEntityOfPage: {
+    '@type': 'WebPage',
+    '@id': `${SITE_URL}/blog/custom-software-houston-texas`,
+  },
+  articleSection: 'Software Development',
+  keywords: ['custom software development', 'Houston software', 'build vs buy', 'custom software benefits', 'software development Houston'],
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'Is custom software development worth the investment?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Custom software is often worth the investment when your workflow is unique, multiple off-the-shelf tools overlap, or you operate in a regulated industry requiring specific controls. Over 3 years, a $75,000 custom project often costs less than subscriptions for a 25-person team.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How long does it take to build custom software?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'MVPs typically take 8-12 weeks to build with a small, focused team. Enterprise platforms take longer depending on scope. The key is starting with a clear scope and delivering incrementally rather than trying to build everything at once.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What is the difference between off-the-shelf and custom software?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Off-the-shelf software is pre-built for general use and works for standard needs. Custom software is built specifically for your business processes, data, and integration requirements. The trade-off is cost vs. fit — off-the-shelf is cheaper initially, but the ongoing costs of adapting your operations to it often exceed custom development over time.',
+      },
+    },
+  ],
+};
 
 export default function BlogPost() {
   return (

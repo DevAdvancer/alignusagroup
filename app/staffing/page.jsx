@@ -2,6 +2,8 @@ import PageHero from '../../components/PageHero';
 import Icon from '../../components/Icon';
 import { staffingSchema, staffingFaqSchema } from './schema';
 
+const SITE_URL = 'https://alignusagroup.com';
+
 export const metadata = {
   title: 'Align USA Staffing Solutions — Contract, Contract-to-Hire & EOR Hiring',
   description:
@@ -24,10 +26,15 @@ export const metadata = {
     'international student staffing',
     'OPT CPT staffing',
   ],
+  alternates: {
+    canonical: `${SITE_URL}/staffing`,
+  },
   openGraph: {
     title: 'Align USA Staffing Solutions — Contract, Contract-to-Hire & EOR Hiring',
     description:
       'Houston-based staffing solutions from Align USA. Contract, contract-to-hire, and EOR hiring with full compliance for US companies.',
+    url: `${SITE_URL}/staffing`,
+    type: 'website',
   },
 };
 

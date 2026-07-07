@@ -2,6 +2,8 @@ import Link from 'next/link';
 import PageHero from '../../components/PageHero';
 import Icon from '../../components/Icon';
 
+const SITE_URL = 'https://alignusagroup.com';
+
 export const metadata = {
   title: 'Align USA Insights — Staffing, Compliance & Software Delivery Blog',
   description:
@@ -18,10 +20,15 @@ export const metadata = {
     'workforce strategy',
     'staffing best practices',
   ],
+  alternates: {
+    canonical: `${SITE_URL}/blog`,
+  },
   openGraph: {
     title: 'Align USA Insights — Staffing, Compliance & Software Delivery Blog',
     description:
       'Expert insights on staffing, compliance, workforce strategy, and software delivery from the Align USA Group team in Houston, TX.',
+    url: `${SITE_URL}/blog`,
+    type: 'website',
   },
 };
 

@@ -1,6 +1,10 @@
 import Link from 'next/link';
 import PageHero from '../../../components/PageHero';
 
+const SITE_URL = 'https://alignusagroup.com';
+const lastUpdated = 'June 8, 2026';
+const publishDate = '2026-06-08';
+
 export const dynamic = 'force-static';
 
 export const metadata = {
@@ -15,13 +19,106 @@ export const metadata = {
     'staffing engagement models',
     'contract staffing ROI',
   ],
+  alternates: {
+    canonical: `${SITE_URL}/blog/contract-staffing-vs-direct-hire`,
+  },
   openGraph: {
     title: 'Contract Staffing vs Direct Hire: Which Model Fits Your Business?',
     description: 'A practical comparison of contract staffing and direct hire models — cost, risk, speed, and long-term workforce quality considerations.',
+    url: `${SITE_URL}/blog/contract-staffing-vs-direct-hire`,
+    type: 'article',
+    article: {
+      publishedTime: '2026-06-08',
+      modifiedTime: '2026-06-08',
+      authors: ['Align USA Group'],
+      section: 'Staffing Strategy',
+    },
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Contract Staffing vs Direct Hire: Which Model Fits Your Business?',
+    description: 'A practical comparison of contract staffing and direct hire models.',
   },
 };
 
-const lastUpdated = 'June 8, 2026';
+// Structured Data
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: SITE_URL },
+    { '@type': 'ListItem', position: 2, name: 'Insights', item: `${SITE_URL}/blog` },
+    { '@type': 'ListItem', position: 3, name: 'Contract Staffing vs Direct Hire', item: `${SITE_URL}/blog/contract-staffing-vs-direct-hire` },
+  ],
+};
+
+const articleSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: 'Contract Staffing vs Direct Hire: Which Model Fits Your Business?',
+  description: 'A practical comparison of contract staffing and direct hire models — cost, risk, speed, and long-term workforce quality considerations from Align USA Group.',
+  image: `${SITE_URL}/og-image.png`,
+  datePublished: publishDate,
+  dateModified: lastUpdated,
+  author: {
+    '@type': 'Organization',
+    name: 'Align USA Group',
+    url: SITE_URL,
+  },
+  publisher: {
+    '@type': 'Organization',
+    name: 'Align USA Group',
+    logo: {
+      '@type': 'ImageObject',
+      url: `${SITE_URL}/logo/icon.png`,
+    },
+  },
+  mainEntityOfPage: {
+    '@type': 'WebPage',
+    '@id': `${SITE_URL}/blog/contract-staffing-vs-direct-hire`,
+  },
+  articleSection: 'Staffing Strategy',
+  keywords: ['contract staffing', 'direct hire', 'staffing models', 'staffing engagement models', 'contract-to-hire'],
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'What are the main differences between contract staffing and direct hire?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Contract staffing offers speed and flexibility but at a higher cost, while direct hire provides lower long-term cost and cultural alignment but requires a longer commitment. The best approach for most growing companies is a mixed model using contract-to-hire as an evaluation period.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How much does contract staffing cost compared to direct hire?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Contract staffing typically costs 30-50% more in bill rate than the equivalent direct hire salary. However, the true cost of a wrong direct hire — including recruiting fees, onboarding, and lost productivity — often exceeds the cost of a contract evaluation period.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Is contract-to-hire worth it?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Contract-to-hire offers a risk-managed path to direct employment with conversion rates of 60-80% for technical roles and 40-60% for operational roles. It provides an objective evaluation period before the permanent hire commitment.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'When should I use contract staffing instead of direct hire?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Use contract staffing for project-based work, seasonal spikes, urgent roles, or when compliance handling requires specialized expertise. Use direct hire for core team positions, culture-defining roles, and long-term strategic hires where institutional knowledge matters.',
+      },
+    },
+  ],
+};
 
 export default function BlogPost() {
   return (
@@ -41,6 +138,8 @@ export default function BlogPost() {
               <span>7 min read</span>
               <span>·</span>
               <span>Staffing Strategy</span>
+              <span>·</span>
+              <span>By Align USA Group</span>
             </div>
 
             <p className="body-lg" style={{ margin: 0 }}>

@@ -2,6 +2,8 @@ import Link from 'next/link';
 import PageHero from '../../components/PageHero';
 import { softwareSchema, softwareFaqSchema } from './schema';
 
+const SITE_URL = 'https://alignusagroup.com';
+
 export const metadata = {
   title: 'Align USA Software Development — Custom Platforms, Apps & Integrations',
   description:
@@ -23,10 +25,15 @@ export const metadata = {
     'Next.js development',
     'custom platform development',
   ],
+  alternates: {
+    canonical: `${SITE_URL}/software`,
+  },
   openGraph: {
     title: 'Align USA Software Development — Custom Platforms, Apps & Integrations',
     description:
       'Houston-based software development from Align USA. Custom web applications, automation, enterprise integrations, and MVP delivery.',
+    url: `${SITE_URL}/software`,
+    type: 'website',
   },
 };
 

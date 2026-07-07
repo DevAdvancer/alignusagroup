@@ -1,5 +1,6 @@
 # Align USA Group - robots.txt
 # https://alignusagroup.com
+# Last Updated: 2026-07-07
 
 User-agent: *
 Allow: /
@@ -10,6 +11,15 @@ Disallow: /contact/thanks
 
 # Allow all major search engines
 User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: Googlebot-News
+Allow: /
+
+User-agent: Googlebot-Video
 Allow: /
 
 User-agent: Bingbot
@@ -27,9 +37,8 @@ Allow: /
 User-agent: YandexBot
 Allow: /
 
-# Sitemap locations
+# Sitemap locations - Next.js generates these dynamically
 Sitemap: https://alignusagroup.com/sitemap.xml
-Sitemap: https://alignusagroup.com/sitemap-articles.xml
 
 # Crawl-delay for polite crawling
 Crawl-delay: 1

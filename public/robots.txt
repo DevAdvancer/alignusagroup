@@ -1,5 +1,5 @@
 # Align USA Group - robots.txt
-# https://alignusagroup.com
+# https://www.alignusagroup.com
 # Last Updated: 2026-07-07
 
 User-agent: *
@@ -38,10 +38,10 @@ User-agent: YandexBot
 Allow: /
 
 # Sitemap locations - Next.js generates these dynamically
-Sitemap: https://alignusagroup.com/sitemap.xml
+Sitemap: https://www.alignusagroup.com/sitemap.xml
 
 # Crawl-delay for polite crawling
 Crawl-delay: 1
 
 # Host directive
-Host: https://alignusagroup.com
+Host: https://www.alignusagroup.com

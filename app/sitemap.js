@@ -1,4 +1,4 @@
-const SITE = 'https://alignusagroup.com';
+const SITE = 'https://www.alignusagroup.com';
 
 const ROUTES = [
   // Main pages with highest priority

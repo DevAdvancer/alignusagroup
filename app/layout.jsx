@@ -11,7 +11,7 @@ const inter = Inter({
   display: 'swap',
 });
 
-const SITE_URL = 'https://alignusagroup.com';
+const SITE_URL = 'https://www.alignusagroup.com';
 const SITE_NAME = 'Align USA Group';
 const SITE_DESCRIPTION =
   'Houston-based staffing, software, and consulting for US companies — scale your team and ship software with compliance-ready hiring from day one.';

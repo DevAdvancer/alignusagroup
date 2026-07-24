@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 
-const SITE_URL = 'https://alignusagroup.com';
+const SITE_URL = 'https://www.alignusagroup.com';
 const SITE_NAME = 'Align USA Group';
 const DEFAULT_IMAGE = '/og-image.png';
 

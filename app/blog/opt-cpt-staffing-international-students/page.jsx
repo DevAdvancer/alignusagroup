@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import PageHero from '../../../components/PageHero';
 
-const SITE_URL = 'https://alignusagroup.com';
+const SITE_URL = 'https://www.alignusagroup.com';
 
 export const dynamic = 'force-static';
 

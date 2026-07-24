@@ -2,7 +2,7 @@ import Link from 'next/link';
 import PageHero from '../../components/PageHero';
 import { softwareSchema, softwareFaqSchema } from './schema';
 
-const SITE_URL = 'https://alignusagroup.com';
+const SITE_URL = 'https://www.alignusagroup.com';
 
 export const metadata = {
   title: 'Align USA Software Development — Custom Platforms, Apps & Integrations',
@@ -67,8 +67,8 @@ const breadcrumbSchema = {
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
   itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://alignusagroup.com' },
-    { '@type': 'ListItem', position: 2, name: 'Software Development', item: 'https://alignusagroup.com/software' },
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.alignusagroup.com' },
+    { '@type': 'ListItem', position: 2, name: 'Software Development', item: 'https://www.alignusagroup.com/software' },
   ],
 };
 

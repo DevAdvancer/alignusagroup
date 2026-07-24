@@ -1,6 +1,6 @@
 import Client from './Client';
 
-const SITE_URL = 'https://alignusagroup.com';
+const SITE_URL = 'https://www.alignusagroup.com';
 
 export const metadata = {
   title: 'Industries We Serve — Align USA Group',

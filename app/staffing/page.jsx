@@ -2,7 +2,7 @@ import PageHero from '../../components/PageHero';
 import Icon from '../../components/Icon';
 import { staffingSchema, staffingFaqSchema } from './schema';
 
-const SITE_URL = 'https://alignusagroup.com';
+const SITE_URL = 'https://www.alignusagroup.com';
 
 export const metadata = {
   title: 'Align USA Staffing Solutions — Contract, Contract-to-Hire & EOR Hiring',
@@ -84,8 +84,8 @@ const breadcrumbSchema = {
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
   itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://alignusagroup.com' },
-    { '@type': 'ListItem', position: 2, name: 'Staffing', item: 'https://alignusagroup.com/staffing' },
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.alignusagroup.com' },
+    { '@type': 'ListItem', position: 2, name: 'Staffing', item: 'https://www.alignusagroup.com/staffing' },
   ],
 };
 

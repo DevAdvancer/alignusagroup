@@ -2,7 +2,7 @@ import Link from 'next/link';
 import PageHero from '../../components/PageHero';
 import Icon from '../../components/Icon';
 
-const SITE_URL = 'https://alignusagroup.com';
+const SITE_URL = 'https://www.alignusagroup.com';
 
 export const metadata = {
   title: 'Align USA Insights — Staffing, Compliance & Software Delivery Blog',
@@ -119,8 +119,8 @@ const breadcrumbSchema = {
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
   itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://alignusagroup.com' },
-    { '@type': 'ListItem', position: 2, name: 'Insights', item: 'https://alignusagroup.com/blog' },
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.alignusagroup.com' },
+    { '@type': 'ListItem', position: 2, name: 'Insights', item: 'https://www.alignusagroup.com/blog' },
   ],
 };
 
@@ -134,7 +134,7 @@ const blogListSchema = {
     '@type': 'ListItem',
     position: i + 1,
     name: post.title,
-    url: `https://alignusagroup.com/blog/${post.slug}`,
+    url: `https://www.alignusagroup.com/blog/${post.slug}`,
   })),
 };
 

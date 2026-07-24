@@ -78,8 +78,8 @@ const breadcrumbSchema = {
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
   itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://alignusagroup.com' },
-    { '@type': 'ListItem', position: 2, name: 'Services', item: 'https://alignusagroup.com/services' },
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.alignusagroup.com' },
+    { '@type': 'ListItem', position: 2, name: 'Services', item: 'https://www.alignusagroup.com/services' },
   ],
 };
 

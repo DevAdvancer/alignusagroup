@@ -1,4 +1,4 @@
-const SITE_URL = 'https://alignusagroup.com';
+const SITE_URL = 'https://www.alignusagroup.com';
 
 export const softwareSchema = {
   '@context': 'https://schema.org',

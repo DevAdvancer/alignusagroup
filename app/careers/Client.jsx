@@ -60,8 +60,8 @@ const breadcrumbSchema = {
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
   itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://alignusagroup.com' },
-    { '@type': 'ListItem', position: 2, name: 'Careers', item: 'https://alignusagroup.com/careers' },
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.alignusagroup.com' },
+    { '@type': 'ListItem', position: 2, name: 'Careers', item: 'https://www.alignusagroup.com/careers' },
   ],
 };
 
@@ -194,7 +194,7 @@ export default function CareersPage() {
               <input type="hidden" name="_subject" value={`Align USA Job Application — ${selectedRole}`} />
               <input type="hidden" name="_template" value="table" />
               <input type="hidden" name="_captcha" value="false" />
-              <input type="hidden" name="_next" value="https://alignusagroup.com/careers/thanks" />
+              <input type="hidden" name="_next" value="https://www.alignusagroup.com/careers/thanks" />
               <input type="text" name="_honey" style={{ display: 'none' }} tabIndex={-1} autoComplete="off" />
 
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>

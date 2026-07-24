@@ -125,7 +125,7 @@ const breadcrumbSchema = {
       '@type': 'ListItem',
       position: 1,
       name: 'Home',
-      item: 'https://alignusagroup.com',
+      item: 'https://www.alignusagroup.com',
     },
   ],
 };

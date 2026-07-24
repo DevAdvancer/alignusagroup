@@ -1,4 +1,4 @@
-const SITE_URL = 'https://alignusagroup.com';
+const SITE_URL = 'https://www.alignusagroup.com';
 const SITE_NAME = 'Align USA Group';
 const SITE_DESCRIPTION = 'Insights on staffing, compliance, and software delivery from the Align USA Group team.';
 

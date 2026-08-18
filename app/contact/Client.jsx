@@ -48,19 +48,13 @@ export default function ContactPage() {
 
     const fd = new FormData(e.currentTarget);
     const payload = {
-      first_name: fd.get('first_name'),
-      last_name: fd.get('last_name'),
+      name: `${fd.get('first_name')} ${fd.get('last_name')}`,
       email: fd.get('email'),
-      company: fd.get('company') || '',
-      inquiry_type: fd.get('inquiry') || '',
-      message: fd.get('message') || '',
-      _subject: `Align USA Group — Contact (${fd.get('inquiry') || 'General'})`,
-      _template: 'table',
-      _captcha: 'false',
+      message: `Company: ${fd.get('company') || 'N/A'}\nInquiry: ${fd.get('inquiry') || 'N/A'}\nMessage: ${fd.get('message') || ''}`
     };
 
     try {
-      const res = await fetch(`https://formsubmit.co/ajax/${FORMSUBMIT_EMAIL}`, {
+      const res = await fetch(`/api/contact`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
         body: JSON.stringify(payload),

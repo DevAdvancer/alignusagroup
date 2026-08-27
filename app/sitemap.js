@@ -10,7 +10,7 @@ const ROUTES = [
   { path: '/consulting', priority: 0.9, changeFrequency: 'monthly', title: 'Align USA Consulting — Workforce Strategy & Compliance' },
   { path: '/industries', priority: 0.7, changeFrequency: 'monthly', title: 'Industries We Serve — Align USA' },
   { path: '/case-studies', priority: 0.6, changeFrequency: 'monthly', title: 'Align USA Case Studies' },
-  { path: '/careers', priority: 0.8, changeFrequency: 'weekly', title: 'Align USA Careers — Open Roles' },
+  { path: '/careers', priority: 0.8, changeFrequency: 'weekly', title: 'Align USA Careers' },
   { path: '/blog', priority: 0.7, changeFrequency: 'weekly', title: 'Align USA Insights — Staffing, Tech & Consulting' },
   { path: '/contact', priority: 0.9, changeFrequency: 'monthly', title: 'Contact Align USA — Book a Consultation' },
 

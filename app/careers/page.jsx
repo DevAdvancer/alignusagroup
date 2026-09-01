@@ -3,7 +3,7 @@ import Client from './Client';
 export const metadata = {
   title: 'Careers — Align USA Group',
   description:
-    'Learn about working at Align USA. While we are not currently hiring, we are always open to connecting with talented people.',
+    'Open roles across engineering, recruiting, design, and account leadership — submit your application or send an open one with your resume.',
 };
 
 export default function CareersPage() {

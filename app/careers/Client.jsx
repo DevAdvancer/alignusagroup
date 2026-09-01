@@ -76,6 +76,45 @@ export default function CareersPage() {
     }
   }
 
+  const [status, setStatus] = useState('idle'); // idle | sending | sent | error
+  const [errorMsg, setErrorMsg] = useState('');
+
+  async function handleSubmit(e) {
+    e.preventDefault();
+    setStatus('sending');
+    setErrorMsg('');
+
+    const fd = new FormData(e.currentTarget);
+
+    try {
+      const res = await fetch(`/api/apply`, {
+        method: 'POST',
+        body: fd,
+      });
+
+      if (!res.ok) {
+        throw new Error(`HTTP ${res.status}`);
+      }
+
+      const data = await res.json().catch(() => ({}));
+      const ok = data.success === 'true' || data.success === true || res.ok;
+
+      if (ok) {
+        setStatus('sent');
+        e.target.reset();
+        window.location.href = '/careers/thanks';
+      } else {
+        throw new Error(data.message || 'Submission failed');
+      }
+    } catch (err) {
+      setStatus('error');
+      setErrorMsg('Something went wrong. Please email Align USA at alignus26@gmail.com.');
+    }
+  }
+
+  const sending = status === 'sending';
+  const sent = status === 'sent';
+
   return (
     <>
       <PageHero
@@ -186,35 +225,33 @@ export default function CareersPage() {
             </p>
 
             <form
-              action={`https://formsubmit.co/${FORMSUBMIT_EMAIL}`}
-              method="POST"
+              onSubmit={handleSubmit}
               encType="multipart/form-data"
               aria-label="Align USA job application form"
             >
               <input type="hidden" name="_subject" value={`Align USA Job Application — ${selectedRole}`} />
               <input type="hidden" name="_template" value="table" />
               <input type="hidden" name="_captcha" value="false" />
-              <input type="hidden" name="_next" value="https://www.alignusagroup.com/careers/thanks" />
               <input type="text" name="_honey" style={{ display: 'none' }} tabIndex={-1} autoComplete="off" />
 
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
                 <div className="field">
                   <label htmlFor="first_name">First name</label>
-                  <input required id="first_name" name="first_name" placeholder="Maya" />
+                  <input required id="first_name" name="first_name" placeholder="Maya" disabled={sending} />
                 </div>
                 <div className="field">
                   <label htmlFor="last_name">Last name</label>
-                  <input required id="last_name" name="last_name" placeholder="Iyer" />
+                  <input required id="last_name" name="last_name" placeholder="Iyer" disabled={sending} />
                 </div>
               </div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
                 <div className="field">
                   <label htmlFor="email">Email</label>
-                  <input required id="email" type="email" name="email" placeholder="maya@example.com" />
+                  <input required id="email" type="email" name="email" placeholder="maya@example.com" disabled={sending} />
                 </div>
                 <div className="field">
                   <label htmlFor="phone">Phone</label>
-                  <input id="phone" type="tel" name="phone" placeholder="+1 555 555 5555" />
+                  <input id="phone" type="tel" name="phone" placeholder="+1 555 555 5555" disabled={sending} />
                 </div>
               </div>
               <div className="field">
@@ -224,6 +261,7 @@ export default function CareersPage() {
                   name="role"
                   value={selectedRole}
                   onChange={(e) => setSelectedRole(e.target.value)}
+                  disabled={sending}
                 >
                   {roles.map(([t]) => (
                     <option key={t}>{t}</option>
@@ -233,7 +271,7 @@ export default function CareersPage() {
               </div>
               <div className="field">
                 <label htmlFor="link">LinkedIn / portfolio (optional)</label>
-                <input id="link" type="url" name="link" placeholder="https://linkedin.com/in/…" />
+                <input id="link" type="url" name="link" placeholder="https://linkedin.com/in/…" disabled={sending} />
               </div>
               <div className="field">
                 <label htmlFor="cover_letter">Cover letter</label>
@@ -241,6 +279,7 @@ export default function CareersPage() {
                   id="cover_letter"
                   name="cover_letter"
                   placeholder="Why this Align USA role, what you have shipped, and how you work."
+                  disabled={sending}
                 />
               </div>
               <div className="field">
@@ -251,17 +290,24 @@ export default function CareersPage() {
                   type="file"
                   name="resume"
                   accept=".pdf,.doc,.docx,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+                  disabled={sending}
                 />
               </div>
+              {status === 'error' && (
+                <div style={{ color: 'var(--red)', marginBottom: 16, fontSize: 14 }}>
+                  {errorMsg}
+                </div>
+              )}
               <div style={{ display: 'flex', gap: 12, alignItems: 'center', flexWrap: 'wrap' }}>
-                <button type="submit" className="btn btn-primary btn-lg">
-                  Submit Align USA Application
+                <button type="submit" className="btn btn-primary btn-lg" disabled={sending}>
+                  {sending ? 'Submitting...' : 'Submit Align USA Application'}
                 </button>
                 <Link className="btn btn-ghost btn-lg" href="/contact">
                   Have a question first?
                 </Link>
               </div>
             </form>
+
           </div>
         </div>
       </section>
